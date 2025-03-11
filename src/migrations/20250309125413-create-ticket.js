@@ -22,7 +22,7 @@ module.exports = {
         allowNull: false
       },
       status: {
-        type: Sequelize.STRING,
+        type: Sequelize.ENUM,
         values: ["PENDING", "SUCCESS", "FAILED"],
         allowNull: false,
         defaultValue: "PENDING"
