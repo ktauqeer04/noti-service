@@ -3,8 +3,7 @@ const { NODEMAILER_USER, NODEMAILER_PASS } = require('../../config/server-config
 
 
 const transporter = nodemailer.createTransport({
-    host: 'sandbox.smtp.mailtrap.io',
-    port: 25,
+    service: 'Gmail',
     auth: {
         user: NODEMAILER_USER,
         pass: NODEMAILER_PASS
