@@ -10,14 +10,19 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-async function sendEmail() {
+async function sendEmail(data) {
+
+    console.log(data)
+
     const info = await transporter.sendMail({
         from: NODEMAILER_USER, // sender address
-        to: "mohammedtauqeer4oct@gmail.com", // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
+        to: data.recepientEmail, 
+        subject: data.subject, // Subject line
+        text: data.content, // plain text body
     });  
     console.log({NODEMAILER_USER, NODEMAILER_PASS})  
 }
 
-module.exports = sendEmail;
+module.exports = {
+    sendEmail
+};
